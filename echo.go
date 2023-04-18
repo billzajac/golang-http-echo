@@ -9,7 +9,7 @@ import (
 	"os"
 )
 
-// DefaultPort is the default port to use if once is not specified by the SERVER_PORT environment variable
+// Default port
 var Port = "9999"
 
 func init() {
@@ -34,6 +34,7 @@ func EchoHandler(writer http.ResponseWriter, request *http.Request) {
 	}
 	fmt.Printf("%s\n", string(reqDump))
 
+	// let everyone in
 	writer.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// allow pre-flight headers
